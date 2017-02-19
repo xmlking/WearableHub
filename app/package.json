@@ -1,0 +1,6 @@
+{
+  "main": "main.js",
+  "dependencies": {
+    "@angular/core": "4.x.x"
+  }
+}

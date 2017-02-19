@@ -1,0 +1,32 @@
+.passLabel{
+  float: right;
+}
+
+Button, Image, TextField{
+  margin:16;
+}
+.btnLogin{
+  color: white;
+  border-radius: 3;
+  background-color: red;
+  height:35;
+}
+
+.horiLine{
+  border-bottom:solid 1px black;
+  width:150;
+}
+.fbBtnLogin{
+  color: white;
+  border-radius: 3;
+  background-color: #2A3F6D;
+}
+.divider{
+  border : solid 1px #ffffff;
+  width:160;
+  height : 1;
+}
+
+.redText{
+  color: red;
+}
