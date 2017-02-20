@@ -32,7 +32,7 @@ module.exports = function (platform, destinationApp) {
         }),
         //Copy assets to out dir. Add your own globs as needed.
         new CopyWebpackPlugin([
-            // { from: "app.css" },
+            { from: './app.' + platform + '.css' },
             { from: "css/**" },
             { from: "fonts/**" },
             { from: "**/*.jpg" },

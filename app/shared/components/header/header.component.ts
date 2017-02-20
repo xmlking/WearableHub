@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {Store} from '@ngrx/store';
-import {AppState} from '../../../app.reducers';
-import {LoginComponent} from '../../../auth/login/login.component';
-import {SignupComponent} from '../../../auth/signup/signup.component';
+import { Store} from '@ngrx/store';
+import { AppState } from '../../../app.reducers';
+import { LoginComponent } from '../../../auth/login/login.component';
+import { SignupComponent } from '../../../auth/signup/signup.component';
 
-import {environment} from '../../../environments/environment';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'header[app-header]',

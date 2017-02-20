@@ -1,17 +1,16 @@
 import { routerReducer } from '@ngrx/router-store';
-
-
-// import { modalReducer, ModalState } from './core/modal/modal.reducer';
-
 import { RouterState } from '@ngrx/router-store';
 
+import { itemsReducer } from "./item/services/item.reducer";
+import { Item } from "./item/services/item.model";
+
 export interface AppState {
-  // modal: ModalState;
+  items: Item[];
   router: RouterState;
 }
 
 export const rootReducer = {
-  // modal: modalReducer,
+  items: itemsReducer,
   router: routerReducer
 };
 
