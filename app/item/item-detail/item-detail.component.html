@@ -1,4 +1,7 @@
-<ActionBar title="Details" class="action-bar"></ActionBar>
+<ActionBar title="Details" class="action-bar">
+  <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" (tap)="onNavBtnTap()"></NavigationButton>
+  <ActionItem  ios.systemIcon="16" ios.position="right" text="delete" android.position="popup" (tap)="onDeleteTap()"></ActionItem>
+</ActionBar>
 <FlexboxLayout flexDirection="column" class="page"  *ngIf="item">
     <FlexboxLayout class="m-15">
         <Label class="h2" [text]="item.id + '. '"></Label>
@@ -6,4 +9,5 @@
     </FlexboxLayout>
     <Label class="h4" [text]="item.role"></Label>
     <Image [src]="item.image_source" height="100" width="100" stretch="fill"></Image>
+    <Button class="btn btn-primary" text="Back" [nsRouterLink]="['/items']"></Button>
 </FlexboxLayout>

@@ -67,7 +67,6 @@ export class ItemService {
 
   getItem(id: number): Item {
     const itm = this.items.filter(item => item.id === id)[0];
-    console.log("image_source1=", itm.image_source1);
     itm.image_source = `https://dummyimage.com/300x300&text=${itm.id}`;
     return itm;
   }

@@ -2069,9 +2069,9 @@ nativescript-intl@~0.0.8:
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/nativescript-intl/-/nativescript-intl-0.0.10.tgz#2a310f07f627344f75db547177db18298d430b0e"
 
-nativescript-telerik-ui-pro@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/nativescript-telerik-ui-pro/-/nativescript-telerik-ui-pro-1.6.0.tgz#331250fb018d6fa984eea302d74626470aaa4c0e"
+nativescript-telerik-ui-pro@next:
+  version "1.6.0-2017.2.13.3"
+  resolved "https://registry.yarnpkg.com/nativescript-telerik-ui-pro/-/nativescript-telerik-ui-pro-1.6.0-2017.2.13.3.tgz#2fd8bd515003e3fa04138f850e914d5d79a71cc1"
 
 nativescript-theme-core@^1.0.2:
   version "1.0.2"
@@ -2931,12 +2931,6 @@ ripemd160@^1.0.0:
 rxjs@~5.0.1:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.0.3.tgz#fc8bdf464ebf938812748e4196788f392fef9754"
-  dependencies:
-    symbol-observable "^1.0.1"
-
-rxjs@~5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.1.1.tgz#fc48922965bc6c5efbcc0fe46e90a3af64137a7b"
   dependencies:
     symbol-observable "^1.0.1"
 

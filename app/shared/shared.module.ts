@@ -6,7 +6,9 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 
 /* Lib */
 import { MomentModule } from 'angular2-moment';
-import {TranslateModule} from 'ng2-translate';
+import { TranslateModule } from 'ng2-translate';
+import { NativeScriptUIListViewModule } from "nativescript-telerik-ui-pro/listview/angular";
+import { NativeScriptUISideDrawerModule } from "nativescript-telerik-ui-pro/sidedrawer/angular";
 
 /* App */
 import {Pipes} from './pipes';
@@ -16,7 +18,9 @@ import {Components} from './components';
 @NgModule({
   imports: [
     NativeScriptModule,
-    NativeScriptRouterModule
+    NativeScriptRouterModule,
+    NativeScriptUIListViewModule,
+    NativeScriptUISideDrawerModule,
   ],
   declarations: [
     ...Components,
@@ -27,6 +31,9 @@ import {Components} from './components';
     NativeScriptHttpModule,
     NativeScriptFormsModule,
     NativeScriptRouterModule,
+    NativeScriptUIListViewModule,
+    // TODO: share if needed ouside SharedModule
+    NativeScriptUISideDrawerModule,
     TranslateModule,
     MomentModule,
     ...Components,

@@ -13,7 +13,7 @@
       "version": "2.5.0"
     },
     "tns-android": {
-      "version": "2.6.0-next-2017-02-15-1663"
+      "version": "2.5.0"
     }
   },
   "android": {
@@ -37,7 +37,7 @@
     "angular2-jwt": "^0.1.28",
     "angular2-moment": "^1.2.0",
     "nativescript-angular": "~1.4.0",
-    "nativescript-telerik-ui-pro": "^1.6.0",
+    "nativescript-telerik-ui-pro": "next",
     "nativescript-theme-core": "^1.0.2",
     "ng2-translate": "^5.0.0",
     "reflect-metadata": "^0.1.9",
