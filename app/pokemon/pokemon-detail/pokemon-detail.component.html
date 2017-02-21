@@ -1,0 +1,13 @@
+<ActionBar [title]="pokemon.formattedName() || 'Loading...'" class="action-bar"></ActionBar>
+
+<StackLayout class="page details-container">
+  <StackLayout *ngIf="pokemon.name">
+    <Image [src]="pokemon.image()"></Image>
+
+    <Label class="h2" text="Types"></Label>
+    <Label *ngFor="let type of pokemon.types" [text]="type" class="bullet"></Label>
+
+    <Label class="h2" text="Stats"></Label>
+    <Label *ngFor="let stat of pokemon.stats" [text]="stat.name + ': ' + stat.value" class="bullet"></Label>
+  </StackLayout>
+</StackLayout>

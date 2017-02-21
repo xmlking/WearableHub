@@ -1,0 +1,15 @@
+<ActionBar title="Pokémon"></ActionBar>
+
+<StackLayout class="page">
+  <Label [style.visibility]="(pokemon$ | async) ? 'collapse' : 'visible'"
+    class="h1 m-10" text="Loading..."></Label>
+
+  <ListView [items]="pokemon$ | async" class="list-group">
+    <template let-item="item">
+      <FlexboxLayout [nsRouterLink]="[item.id]" class="container">
+        <Image [src]="item.image()"></Image>
+        <Label [text]="item.formattedName()" class="list-group-item"></Label>
+      </FlexboxLayout>
+    </template>
+  </ListView>
+</StackLayout>

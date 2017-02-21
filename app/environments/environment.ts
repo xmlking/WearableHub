@@ -6,9 +6,10 @@
 export const environment = {
   production: false,
 
-  TITLE: 'Fitness Zone',
+  TITLE: 'WearableHub',
 
   AUTH_BASE_URL: 'http://localhost:8080',
   API_BASE_URL: 'http://localhost:8080',
   WS_BASE_URL: 'http://localhost:8090',
+  POKE_BASE_URL: 'https://pokeapi.co/api/v2/'
 };

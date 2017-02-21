@@ -1,7 +1,5 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 
-
-
 import { SharedModule } from "../shared/shared.module";
 import { ItemRoutingModule } from "./item-routing.module";
 

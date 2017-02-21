@@ -1,10 +1,10 @@
-import {NgModule, Optional, SkipSelf, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule, Optional, SkipSelf, NO_ERRORS_SCHEMA } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 
-import {Services} from './services';
-import {Guards} from './guards';
+import { Services } from './services';
+import { Guards } from './guards';
 
-import {EffectsModule} from '@ngrx/effects';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   imports: [
