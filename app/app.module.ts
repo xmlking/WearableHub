@@ -13,11 +13,11 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CoreModule } from './core/core.module';
 import { AuthModule } from './auth/auth.module';
 
-import {TranslateLoader, TranslateModule, TranslateStaticLoader} from 'ng2-translate';
-import {Http} from '@angular/http';
+import { TranslateLoader, TranslateModule, TranslateStaticLoader } from 'ng2-translate';
+import { Http } from '@angular/http';
 
 export function createTranslateLoader(http: Http) {
-  return new TranslateStaticLoader(http, './assets/i18n', '.json');
+  return new TranslateStaticLoader(http, '/assets/i18n', '.json');
 }
 
 @NgModule({

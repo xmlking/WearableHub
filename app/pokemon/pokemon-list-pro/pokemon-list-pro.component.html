@@ -1,0 +1,27 @@
+<ActionBar title="Pokémon" class="action-bar"></ActionBar>
+<!--<ActionBar title="Items"  class="action-bar">-->
+<!--<android>-->
+<!--<NavigationButton icon="res://ic_menu" (tap)="showSideDrawer()"></NavigationButton>-->
+<!--</android>-->
+<!--<ios>-->
+<!--<ActionItem icon="res://ic_menu" ios.position="left" (tap)="showSideDrawer()"></ActionItem>-->
+<!--</ios>-->
+<!--</ActionBar>-->
+
+<GridLayout>
+  <RadListView id="itemList" [items]="pokemon$ | async" class="list-group"
+               loadOnDemandMode="Manual" (loadMoreDataRequested)="onLoadMoreItemsRequested($event)"
+               pullToRefresh="true" (pullToRefreshInitiated)="onPullToRefreshInitiated($event)">
+    <ListViewLinearLayout tkListViewLayout scrollDirection="Vertical" itemInsertAnimation="Scale" itemDeleteAnimation="Fade"></ListViewLinearLayout>
+    <template tkListItemTemplate let-item="item">
+      <StackLayout orientation="vertical" [nsRouterLink]="['/pokemon', item.id]">
+        <Image [src]="item.image()"></Image>
+        <Label [text]="item.formattedName()" class="list-group-item"></Label>
+    </StackLayout>
+    </template>
+  </RadListView>
+</GridLayout>
+
+
+
+

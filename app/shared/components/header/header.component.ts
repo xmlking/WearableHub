@@ -15,7 +15,7 @@ import { environment } from '../../../environments/environment';
 })
 export class HeaderComponent implements OnInit {
 
-  title = environment.TITLE;
+  title = environment.APP_TITLE;
   isCollapsed: boolean;
 
   constructor(public router: Router, private store: Store<AppState>, private modalActions: any) {}

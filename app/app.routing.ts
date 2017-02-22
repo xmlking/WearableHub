@@ -2,8 +2,8 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
 const routes: Routes = [
-  { path: "", redirectTo: "/pokemon", pathMatch: "full" },
-  { path: 'items',  loadChildren: './item/item.module#ItemModule'},
+  { path: "", redirectTo: "/home", pathMatch: "full" },
+  { path: 'home',     loadChildren: './home/home.module#HomeModule' },
   { path: 'pokemon',  loadChildren: './pokemon/pokemon.module#PokemonModule'},
 ];
 

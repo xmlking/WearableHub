@@ -1,0 +1,10 @@
+{
+  "HOME": "Home",
+  "ABOUT": "About",
+  "HEADING": "NativeScript has an amazing community of contributors that develop incredible plugins.",
+  "WIP": "Currently an active work in progress.",
+  "LANDING": {
+    "HELLO": "hello {{value}}",
+    "WELCOME": "Bienvenido"
+  }
+}

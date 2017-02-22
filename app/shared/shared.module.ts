@@ -11,8 +11,8 @@ import { NativeScriptUIListViewModule } from "nativescript-telerik-ui-pro/listvi
 import { NativeScriptUISideDrawerModule } from "nativescript-telerik-ui-pro/sidedrawer/angular";
 
 /* App */
-import {Pipes} from './pipes';
-import {Components} from './components';
+import { Pipes } from './pipes';
+import { Components } from './components';
 
 
 @NgModule({

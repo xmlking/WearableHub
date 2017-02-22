@@ -3,6 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { PokemonComponent } from "./pokemon.component";
 import { PokemonListComponent } from "./pokemon-list/pokemon-list.component";
 import { PokemonDetailComponent } from "./pokemon-detail/pokemon-detail.component";
+import { PokemonListProComponent } from "./pokemon-list-pro/pokemon-list-pro.component";
 
 const routes: Routes = [
   {
@@ -11,7 +12,12 @@ const routes: Routes = [
         path: '',
         component: PokemonListComponent
       },
-      { path: ':id',
+      {
+        path: 'pro',
+        component: PokemonListProComponent
+      },
+      {
+        path: ':id',
         component: PokemonDetailComponent
       },
     ]

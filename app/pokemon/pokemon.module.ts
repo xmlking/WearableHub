@@ -5,6 +5,7 @@ import { PokemonRoutingModule } from "./pokemon-routing.module";
 
 import { PokemonComponent } from "./pokemon.component";
 import { PokemonListComponent } from "./pokemon-list/pokemon-list.component";
+import { PokemonListProComponent } from "./pokemon-list-pro/pokemon-list-pro.component";
 import { PokemonDetailComponent } from "./pokemon-detail/pokemon-detail.component";
 import { PokemonService } from "./services/pokemon.service";
 import { EffectsModule } from "@ngrx/effects";
@@ -20,6 +21,7 @@ import { PokemonActions } from "./services/pokemon.actions";
   declarations: [
     PokemonComponent,
     PokemonListComponent,
+    PokemonListProComponent,
     PokemonDetailComponent,
   ],
   providers: [

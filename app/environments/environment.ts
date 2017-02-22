@@ -6,7 +6,7 @@
 export const environment = {
   production: false,
 
-  TITLE: 'WearableHub',
+  APP_TITLE: 'WearableHub',
 
   AUTH_BASE_URL: 'http://localhost:8080',
   API_BASE_URL: 'http://localhost:8080',
