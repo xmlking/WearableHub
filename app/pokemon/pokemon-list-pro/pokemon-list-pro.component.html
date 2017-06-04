@@ -13,12 +13,12 @@
                loadOnDemandMode="Manual" (loadMoreDataRequested)="onLoadMoreItemsRequested($event)"
                pullToRefresh="true" (pullToRefreshInitiated)="onPullToRefreshInitiated($event)">
     <ListViewLinearLayout tkListViewLayout scrollDirection="Vertical" itemInsertAnimation="Scale" itemDeleteAnimation="Fade"></ListViewLinearLayout>
-    <template tkListItemTemplate let-item="item">
+    <ng-template tkListItemTemplate let-item="item">
       <StackLayout orientation="vertical" [nsRouterLink]="['/pokemon', item.id]">
         <Image [src]="item.image()"></Image>
         <Label [text]="item.formattedName()" class="list-group-item"></Label>
     </StackLayout>
-    </template>
+    </ng-template>
   </RadListView>
 </GridLayout>
 

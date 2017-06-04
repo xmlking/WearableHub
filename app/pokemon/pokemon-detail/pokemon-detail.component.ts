@@ -25,8 +25,8 @@ export class PokemonDetailComponent implements OnInit, OnDestroy {
               private store: Store<AppState>) { }
 
   ngOnInit(): void {
-    this.pokemon$ =  this.store.select<Pokemon>('pokemon', 'selectedItem');
-    this.error$ =  this.store.select<any>('pokemon', 'error');
+    this.pokemon$ =  this.store.select<Pokemon>("pokemon", "selectedItem");
+    this.error$ =  this.store.select<any>("pokemon", "error");
     // TODO: fix template to use async
     this.sub = this.pokemon$.subscribe( (pokemon: Pokemon) => {
         this.pokemon = pokemon;

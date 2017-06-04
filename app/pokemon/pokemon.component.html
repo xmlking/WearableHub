@@ -1,0 +1,32 @@
+<RadSideDrawer
+  #drawer drawerLocation="left">
+  <StackLayout tkDrawerContent class="sidedrawer-center">
+
+    <GridLayout rows="*, auto">
+      <StackLayout row="0" class = "text-center" class="sidedrawer-content">
+        <Image src="res://icon" class="sidedrawer-header-image img-circle"></Image>
+        <Label class="hr-light"></Label>
+        <Label (tap)="closeDrawer()" text="Home" class="btn btn-primary btn-blue sidedrawer-list-item-text" ></Label>
+        <Label class="hr-dark"></Label>
+        <Label (tap)="closeDrawer()" text="About" class="btn btn-primary btn-blue sidedrawer-list-item-text" ></Label>
+        <Label class="hr-dark"></Label>
+        <Label (tap)="closeDrawer()" text="Pokemon" class="btn btn-primary btn-blue sidedrawer-list-item-text" ></Label>
+        <Label class="hr-dark"></Label>
+        <Label (tap)="closeDrawer()" text="Pokemon Pro" class="btn btn-primary btn-blue sidedrawer-list-item-text" ></Label>
+        <Label class="hr-dark"></Label>
+        <Label (tap)="closeDrawer()" text="Favorite Pokemon" class="btn btn-primary btn-blue sidedrawer-list-item-text" ></Label>
+        <Label class="hr-dark"></Label>
+      </StackLayout>
+
+      <StackLayout row="1">
+        <Label class = "text-center" text="WearableHub © 2017 Sumo, Inc."></Label>
+      </StackLayout>
+    </GridLayout>
+
+  </StackLayout>
+
+  <StackLayout tkMainContent>
+    <router-outlet></router-outlet>
+  </StackLayout>
+
+</RadSideDrawer>

@@ -1,18 +1,20 @@
 import { Component } from "@angular/core";
 import * as Platform from "platform";
-import { TranslateService } from "ng2-translate";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
-    selector: "ns-app",
+    selector: "app-app",
     templateUrl: "app.component.html",
-    // styleUrls: ['app.scss']
+    // styleUrls: ["app.scss"]
 })
 export class AppComponent {
   public language: string;
   constructor(translate: TranslateService) {
-    this.language = Platform.device.language;
-    // this language will be used as a fallback when a translation isn't found in the current language
-    translate.setDefaultLang("en");
-    translate.use(Platform.device.language.split("-")[0]);
+    // this.language = translate.getBrowserLang();
+    this.language = Platform.device.language.split("-")[0];
+    // translate.addLangs(["en", "fr"]);
+    translate.setDefaultLang("en"); // fallback
+
+    translate.use(this.language.match(/en|es|fr|ru/) ? this.language : "en");
   }
 }

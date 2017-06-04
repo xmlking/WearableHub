@@ -1,17 +1,16 @@
-import { Injectable } from '@angular/core';
-import { Actions, Effect } from '@ngrx/effects';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/mergeMap';
+import { Injectable } from "@angular/core";
+import { Actions, Effect } from "@ngrx/effects";
+import { Observable } from "rxjs/Observable";
+import "rxjs/add/observable/of";
+import "rxjs/add/operator/do";
+import "rxjs/add/operator/switchMap";
+import "rxjs/add/operator/mergeMap";
 
-import { Filters, PokemonActions } from "./pokemon.actions";
-import { PokemonService } from './pokemon.service';
+import { PokemonActions } from "./pokemon.actions";
+import { Filters, PokemonService } from "./pokemon.service";
 import { Pokemon } from "./pokemon.model";
 
 @Injectable()
-
 export class PokemonEffects {
   constructor(
     private actions$: Actions,

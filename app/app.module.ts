@@ -1,23 +1,24 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
-import { AppState, rootReducer } from './app.reducers';
+import { AppState, rootReducer } from "./app.reducers";
 
-import { StoreModule } from '@ngrx/store';
-import { RouterStoreModule } from '@ngrx/router-store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreModule } from "@ngrx/store";
+import { RouterStoreModule } from "@ngrx/router-store";
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 
 /* Feature Modules */
-import { CoreModule } from './core/core.module';
-import { AuthModule } from './auth/auth.module';
+import { CoreModule } from "./core/core.module";
+import { AuthModule } from "./auth/auth.module";
 
-import { TranslateLoader, TranslateModule, TranslateStaticLoader } from 'ng2-translate';
-import { Http } from '@angular/http';
+import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { Http } from "@angular/http";
 
-export function createTranslateLoader(http: Http) {
-  return new TranslateStaticLoader(http, '/assets/i18n', '.json');
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: Http) {
+  return new TranslateHttpLoader(http);
 }
 
 @NgModule({
@@ -25,16 +26,17 @@ export function createTranslateLoader(http: Http) {
         AppComponent
     ],
     imports: [
-      NativeScriptModule,
-      NativeScriptRouterModule,
-      TranslateModule.forRoot({
-        provide: TranslateLoader,
-        useFactory: (createTranslateLoader),
-        deps: [Http]
-      }),
-      AuthModule,
       CoreModule,
+      AuthModule,
+      NativeScriptRouterModule,
       AppRoutingModule,
+      TranslateModule.forRoot({
+        loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [Http]
+        }
+      }),
       StoreModule.provideStore(rootReducer),
       RouterStoreModule.connectRouter(),
       StoreDevtoolsModule.instrumentOnlyWithExtension(),

@@ -1,18 +1,18 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { SharedModule } from '../shared/shared.module';
-import * as appSettings from 'application-settings';
+import { LoginComponent } from "./login/login.component";
+import { SignupComponent } from "./signup/signup.component";
+import { SharedModule } from "../shared/shared.module";
+import * as appSettings from "application-settings";
 
-import { AuthHttp, AuthConfig } from 'angular2-jwt';
-import {Http, RequestOptions} from '@angular/http';
+import { AuthHttp, AuthConfig } from "angular2-jwt";
+import { Http, RequestOptions } from "@angular/http";
 
 // http://stackoverflow.com/questions/38718799/nativescript-authenticating-at-backend-web-api
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp(new AuthConfig({
-    tokenName: 'token',
-    tokenGetter: (() => appSettings.getString('token')),
-    globalHeaders: [{'Content-Type': 'application/json'}],
+    tokenName: "token",
+    tokenGetter: (() => appSettings.getString("token")),
+    globalHeaders: [{"Content-Type": "application/json"}],
   }), http, options);
 }
 

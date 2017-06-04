@@ -8,13 +8,13 @@ import { Store } from "@ngrx/store";
 import { AppState } from "../../app.reducers";
 import { PokemonActions } from "../services/pokemon.actions";
 import { PokemonState } from "../services/pokemon.reducer";
-import { ListViewEventData } from "nativescript-telerik-ui-pro/listview";
+import { ListViewEventData } from "nativescript-telerik-ui/listview";
 
 @Component({
   selector: "app-pokemon-list",
   moduleId: module.id,
   templateUrl: "pokemon-list-pro.component.html",
-  styleUrls: ['./pokemon-list-pro.component.scss'],
+  styleUrls: ["./pokemon-list-pro.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PokemonListProComponent implements OnInit {
@@ -28,41 +28,36 @@ export class PokemonListProComponent implements OnInit {
               private store: Store<AppState>) { }
 
   ngOnInit(): void {
-    this.loading$ =  this.store.select<boolean>('pokemon', 'loading');
-    this.error$ =  this.store.select<any>('pokemon', 'error');
-    this.pokemon$ =  this.store.select<Pokemon[]>('pokemon', 'items');
-    this.count$ =  this.store.select<number>('pokemon', 'count');
+    this.loading$ =  this.store.select<boolean>("pokemon", "loading");
+    this.error$ =  this.store.select<any>("pokemon", "error");
+    this.pokemon$ =  this.store.select<Pokemon[]>("pokemon", "items");
+    this.count$ =  this.store.select<number>("pokemon", "count");
     this.store.dispatch(this.pokemonActions.load({ offset: 0, limit: 8}));
   }
 
   public onLoadMoreItemsRequested(args: ListViewEventData) {
     console.log(`Loading more data`);
-    // this.loadOnDemandInProgress = true;
-    // this.itemPagesLoaded++;
-    // this.itemService.loadMoreItems(this.itemPagesLoaded);
-  }
-
-  public onPullToRefreshInitiated1(args: ListViewEventData) {
-    console.log(`ItemComponent - pull to refresh`);
-    // this.pullToRefreshInProgress = true;
-    // Reset pages of item records loaded
-    // this.itemPagesLoaded = 1;
-    // this.itemService.loadItems();
-    // this.itemList.notifyPullToRefreshFinished();
+    this.store.dispatch(this.pokemonActions.loadMore());
+    // TODO
+    timerModule.setTimeout(function () {
+      const listView = args.object;
+      listView.notifyLoadOnDemandFinished();
+    }, 1000);
   }
 
   public onPullToRefreshInitiated(args: ListViewEventData) {
     console.log(`ItemComponent - pull to refresh`);
+    this.store.dispatch(this.pokemonActions.load());
     const that = new WeakRef(this);
+    // TODO
     timerModule.setTimeout(function () {
-      // TODO
       const listView = args.object;
       listView.notifyPullToRefreshFinished();
     }, 1000);
   }
 
   public showSideDrawer() {
-    console.log('in showSideDrawer');
+    console.log("in showSideDrawer");
   }
 
 }

@@ -1,7 +1,8 @@
 import { Action, ActionReducer } from "@ngrx/store";
 
 import { Pokemon } from "./pokemon.model";
-import { Filters, PokemonActions } from "./pokemon.actions";
+import { PokemonActions } from "./pokemon.actions";
+import { Filters } from "./pokemon.service";
 
 export interface PokemonState {
   items: [Pokemon];

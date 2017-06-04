@@ -3,14 +3,22 @@ import { Http, Headers, Response, URLSearchParams } from "@angular/http";
 import { Observable } from "rxjs/Rx";
 import "rxjs/add/observable/of";
 import "rxjs/add/operator/toPromise";
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
+import "rxjs/add/operator/do";
+import "rxjs/add/operator/map";
+import "rxjs/add/operator/catch";
 
 import { Pokemon } from "./pokemon.model";
-import { environment } from '../../environments/environment';
-import { Filters } from "./pokemon.actions";
+import { environment } from "../../environments/environment";
 
+export type Filters = {
+  limit: number,
+  offset: number
+};
+
+export type ListResult<T> = {
+  items: T[];
+  total: number;
+};
 
 @Injectable()
 export class PokemonService {
@@ -20,9 +28,9 @@ export class PokemonService {
   // http://pokeapi.co/api/v2/evolution-chain/?offset=2&limit=10
   list(filters: Filters = {offset: 0, limit: 8}): Observable<{items: [Pokemon], meta: {count: number}}> {
     let params: URLSearchParams = new URLSearchParams();
-    params.set('offset', filters.offset.toString());
-    params.set('limit', filters.limit.toString());
-    return this.http.get(environment.POKE_BASE_URL + 'pokedex/2/', {
+    params.set("offset", filters.offset.toString());
+    params.set("limit", filters.limit.toString());
+    return this.http.get(environment.POKE_BASE_URL + "pokedex/2/", {
       headers: PokemonService.headers,
       search: params
     })
@@ -73,14 +81,14 @@ export class PokemonService {
 
   private toJSON(response: Response) {
     if (response.status < 200 || response.status >= 300) {
-      throw new Error('Bad response status: ' + response.status);
+      throw new Error("Bad response status: " + response.status);
     }
     return response.json();
   }
 
   private handleError(errorResponse: Response) {
     let body = errorResponse.json();
-    let message = body.message ? body.message : (errorResponse.statusText || 'unknown error');
+    let message = body.message ? body.message : (errorResponse.statusText || "unknown error");
     return Observable.throw(message);
   }
 

@@ -1,7 +1,23 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild, AfterViewInit } from "@angular/core";
+import { RadSideDrawerComponent, SideDrawerType } from "nativescript-telerik-ui/sidedrawer/angular";
 
 @Component({
   selector: "app-pokemon",
-  template: "<page-router-outlet></page-router-outlet>"
+  templateUrl: "./pokemon.component.html",
+  styleUrls: ["./pokemon.component.scss"]
 })
-export class PokemonComponent { }
+export class PokemonComponent implements AfterViewInit {
+  @ViewChild(RadSideDrawerComponent) public drawerComponent: RadSideDrawerComponent;
+  private drawer: SideDrawerType;
+
+  ngAfterViewInit() {
+    this.drawer = this.drawerComponent.sideDrawer;
+  }
+  openDrawer() {
+    this.drawer.showDrawer();
+  }
+  closeDrawer() {
+    this.drawer.closeDrawer();
+  }
+}
+

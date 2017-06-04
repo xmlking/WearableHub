@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { PokemonComponent } from "./pokemon.component";
 import { PokemonListComponent } from "./pokemon-list/pokemon-list.component";
@@ -7,17 +7,17 @@ import { PokemonListProComponent } from "./pokemon-list-pro/pokemon-list-pro.com
 
 const routes: Routes = [
   {
-    path: '', component: PokemonComponent, children: [
+    path: "", component: PokemonComponent, children: [
       {
-        path: '',
+        path: "",
         component: PokemonListComponent
       },
       {
-        path: 'pro',
+        path: "pro",
         component: PokemonListProComponent
       },
       {
-        path: ':id',
+        path: ":id",
         component: PokemonDetailComponent
       },
     ]

@@ -1,4 +1,4 @@
-import { HighLightPipe } from './highlight.pipe';
+import { HighLightPipe } from "./highlight.pipe";
 
 export const Pipes = [
   HighLightPipe,

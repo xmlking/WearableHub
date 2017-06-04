@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, NavigationEnd, Router } from "@angular/router";
 import { PageRoute } from "nativescript-angular/router";
 import { Page } from "ui/page";
 import "rxjs/add/operator/switchMap";
-import { environment } from '../../../environments/environment';
+import { environment } from "../../../environments/environment";
 
 @Component({
-  selector: 'app-home-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  selector: "app-home-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.scss"],
 
 })
 export class HeaderComponent implements OnInit {
@@ -26,9 +26,6 @@ private _routerSubscription;
 
   ngOnInit() {
     this.isCollapsed = true;
-
-
-
     // this.router.events
     //   .filter(event => event instanceof NavigationEnd)
     //   .map(() => this.route.snapshot.root)
@@ -36,7 +33,7 @@ private _routerSubscription;
     //     while (root.children && root.children.length) root = root.children[0];
     //     return root;
     //   })
-    //   // .filter(route => route.outlet === 'primary')
+    //   // .filter(route => route.outlet === "primary")
     //   .map(root => root.data)
     //   .subscribe((data) =>  console.log("xxx:", data["title"]));
 
@@ -60,7 +57,7 @@ private _routerSubscription;
   }
 
   // setTitle($event) {
-  //   this.router.data.map(data => data['title'])
+  //   this.router.data.map(data => data["title"])
   //     .do(key => console.log(key))
   //     .switchMap(key => this.translate.get(key))
   //     .subscribe(translation => this.titleService.setTitle(translation));

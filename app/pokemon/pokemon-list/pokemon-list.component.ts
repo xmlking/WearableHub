@@ -12,7 +12,7 @@ import { PokemonState } from "../services/pokemon.reducer";
   selector: "app-pokemon-list",
   moduleId: module.id,
   templateUrl: "pokemon-list.component.html",
-  styleUrls: ['./pokemon-list.component.scss'],
+  styleUrls: ["./pokemon-list.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PokemonListComponent implements OnInit {
@@ -26,10 +26,10 @@ export class PokemonListComponent implements OnInit {
               private store: Store<AppState>) { }
 
   ngOnInit(): void {
-    this.loading$ =  this.store.select<boolean>('pokemon', 'loading');
-    this.error$ =  this.store.select<any>('pokemon', 'error');
-    this.pokemon$ =  this.store.select<Pokemon[]>('pokemon', 'items');
-    this.count$ =  this.store.select<number>('pokemon', 'count');
+    this.loading$ =  this.store.select<boolean>("pokemon", "loading");
+    this.error$ =  this.store.select<any>("pokemon", "error");
+    this.pokemon$ =  this.store.select<Pokemon[]>("pokemon", "items");
+    this.count$ =  this.store.select<number>("pokemon", "count");
     this.store.dispatch(this.pokemonActions.load({ offset: 0, limit: 8}));
   }
 }

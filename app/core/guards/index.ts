@@ -1,4 +1,4 @@
-﻿import { AuthGuard } from './auth.guard';
+﻿import { AuthGuard } from "./auth.guard";
 
 export const Guards = [
   AuthGuard,

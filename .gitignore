@@ -1,11 +1,10 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
-
 # compiled output
 /dist
 /tmp
+/debugger
 
 # dependencies
-/node_modules
+node_modules/
 
 # IDEs and editors
 /.idea
@@ -27,10 +26,7 @@
 /.sass-cache
 /connect.lock
 /coverage/*
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
+**/*.log
 /typings
 
 # e2e
@@ -46,6 +42,8 @@ Thumbs.db
 *.js.map
 app/**/*.js
 app/**/*.css
+!/app/app.android.css
+!/app/app.ios.css
 hooks/
 lib/
 platforms/
@@ -54,4 +52,5 @@ tmp/
 # Sumo
 NOTES.md
 TODO.md
+DIY.md
 

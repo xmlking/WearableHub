@@ -1,10 +1,9 @@
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 
-import { SharedModule } from '../shared/shared.module';
-import { HomeComponent } from './home.component';
-import { Components } from './components';
-import { HomeRoutingModule } from './home-routing.module';
-import { LandingComponent } from "./landing/landing.component";
+import { SharedModule } from "../shared/shared.module";
+import { HomeComponent } from "./home.component";
+import { Components } from "./components";
+import { HomeRoutingModule } from "./home-routing.module";
 
 @NgModule({
   imports: [
@@ -13,7 +12,6 @@ import { LandingComponent } from "./landing/landing.component";
   ],
   declarations: [
     HomeComponent,
-    LandingComponent,
     ...Components,
   ],
   schemas: [NO_ERRORS_SCHEMA]
