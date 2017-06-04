@@ -11,7 +11,12 @@ yarn
 yarn run start-ios-bundle
 ```
 
-### Clean
+### Build
 ```bash
-yarn run clean
+yarn run build-ios-bundle
+```
+
+### Publish
+```bash
+yarn run publish-ios-bundle
 ```
