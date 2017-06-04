@@ -1,6 +1,7 @@
 <ActionBar [title]="pokemon.formattedName() || 'Loading...'" class="action-bar"></ActionBar>
 
 <StackLayout class="page details-container">
+  <Button class="btn btn-primary" text="Pokemon" [nsRouterLink]="['/pokemon']"></Button>
   <StackLayout *ngIf="pokemon.name">
     <Image [src]="pokemon.image()"></Image>
 
