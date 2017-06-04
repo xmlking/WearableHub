@@ -8,7 +8,7 @@ import { SignupComponent } from "../../../auth/signup/signup.component";
 import { environment } from "../../../environments/environment";
 
 @Component({
-  selector: "header[app-header]",
+  selector: "app-header",
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.scss"],
 
